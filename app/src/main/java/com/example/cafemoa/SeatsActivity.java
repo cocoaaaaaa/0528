@@ -24,6 +24,8 @@ import java.net.URL;
 
 public class SeatsActivity extends AppCompatActivity {
     String name;
+    String loginID;
+    String loginSort;
     TextView mTextViewResult;
     EditText seatsCount;
     private AlertDialog dialog;
@@ -42,6 +44,8 @@ public class SeatsActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         name = intent.getExtras().getString("name");
+        loginID = intent.getExtras().getString("loginID");
+        loginSort = intent.getExtras().getString("loginSort");
 
         setup();
 

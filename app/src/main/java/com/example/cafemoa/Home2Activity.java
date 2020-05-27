@@ -38,6 +38,7 @@ public class Home2Activity extends AppCompatActivity
         PlacesListener {
 
     String loginID;
+    String loginSort;
     private GoogleMap mMap;
     private   AlertDialog dialog;
     List<Marker> previous_marker = null;
@@ -49,6 +50,7 @@ public class Home2Activity extends AppCompatActivity
 
         Intent intent = getIntent();
         loginID = intent.getExtras().getString("loginID");
+        loginSort = intent.getExtras().getString("loginSort");
 
         previous_marker = new ArrayList<Marker>();
 
@@ -202,16 +204,29 @@ public class Home2Activity extends AppCompatActivity
                 break;
 
             case R.id.action_search2:
-                Intent intent2 = new Intent(Home2Activity.this, InformationActivity.class);
-                intent2.putExtra("loginID", loginID);
-                Home2Activity.this.startActivity(intent2);
+                if(loginSort.equals("1")) {            //점주
+                    Intent intent2 = new Intent(Home2Activity.this, InformationActivity.class);
+                    intent2.putExtra("loginID", loginID);
+                    intent2.putExtra("loginSort", loginSort);
+                    Home2Activity.this.startActivity(intent2);
+
+
+                }
+                /*else if(loginSort.equals("2")){       //고객
+
+
+                }*/
 
                 break;
 
+
             case R.id.pointMenu:
                 Intent intent3 = new Intent(Home2Activity.this, Point2Activity.class);
-
+                intent3.putExtra("loginID", loginID);
+                intent3.putExtra("loginSort", loginSort);
                 Home2Activity.this.startActivity(intent3);
+                break;
+
         }
         return true;
     }

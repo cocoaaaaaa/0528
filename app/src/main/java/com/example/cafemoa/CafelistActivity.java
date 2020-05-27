@@ -187,7 +187,7 @@ public class CafelistActivity extends AppCompatActivity {
                 ListData ListData = new ListData();
 
                 ListData.setCafe_name(name);
-               ListData.setCafe_address(address);
+                ListData.setCafe_address(address);
 
 
                 mArrayList.add(ListData);

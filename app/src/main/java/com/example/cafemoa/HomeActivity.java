@@ -183,9 +183,11 @@ public class HomeActivity extends AppCompatActivity
             case R.id.signupMenu:
                 Intent intent1 =new Intent(HomeActivity.this,SignupActivity.class);
                 HomeActivity.this.startActivity(intent1);
+                break;
             case R.id.action_search:
                 Intent intent2=new Intent(HomeActivity.this, Information2Activity.class);
                 HomeActivity.this.startActivity(intent2);
+                break;
         }
         return  true;
     }

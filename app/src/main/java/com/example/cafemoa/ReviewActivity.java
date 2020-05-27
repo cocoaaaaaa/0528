@@ -30,6 +30,7 @@ import java.net.URL;
 public class ReviewActivity extends AppCompatActivity {
     String name;
     String loginID;
+    String loginSort;
     float rate;
     EditText mEditTextreview, mEditTexttitle;
     TextView mTextViewResult;
@@ -46,6 +47,8 @@ public class ReviewActivity extends AppCompatActivity {
         Intent intent = getIntent();
         name = intent.getExtras().getString("name");
         loginID = intent.getExtras().getString("loginID");
+        loginSort = intent.getExtras().getString("loginSort");
+
 
         mTextViewResult = (TextView)findViewById(R.id.textView_result);
         mTextViewResult.setMovementMethod(new ScrollingMovementMethod());

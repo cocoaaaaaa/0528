@@ -43,6 +43,7 @@ public class Review2Activity extends AppCompatActivity {
 
     String name;
     String loginID;
+    String loginSort;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -53,6 +54,7 @@ public class Review2Activity extends AppCompatActivity {
         Intent intent = getIntent();
         name = intent.getExtras().getString("name");
         loginID = intent.getExtras().getString("loginID");
+        loginSort = intent.getExtras().getString("loginSort");
 
 
         mTextViewResult = (TextView)findViewById(R.id.textView_main_result);
@@ -84,6 +86,7 @@ public class Review2Activity extends AppCompatActivity {
                 Intent intent = new Intent( Review2Activity.this, ReviewActivity.class );
                 intent.putExtra("name", name);
                 intent.putExtra("loginID", loginID);
+                intent.putExtra("loginSort", loginSort);
                 startActivity(intent);
             }
         });

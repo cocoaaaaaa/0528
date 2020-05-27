@@ -38,6 +38,7 @@ import java.util.HashMap;
 public class InformationActivity extends AppCompatActivity {
 
     String loginID;
+    String loginSort;
 
     private static String TAG = "phpinfo";
 
@@ -64,6 +65,7 @@ public class InformationActivity extends AppCompatActivity {
 
         Intent intent = getIntent();
         loginID = intent.getExtras().getString("loginID");
+        loginSort = intent.getExtras().getString("loginSort");
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_information);
@@ -95,6 +97,8 @@ public void onClick(View v) {
             public void onClick(View view) {
                 Intent intent = new Intent( InformationActivity.this, SeatsActivity.class );
                 intent.putExtra("name", mEditTextSearchKeyword1.getText().toString());
+                intent.putExtra("loginID", loginID);
+                intent.putExtra("loginSort", loginSort);
                 startActivity(intent);
             }
         });
@@ -103,7 +107,9 @@ public void onClick(View v) {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent( InformationActivity.this, PointActivity.class );
-               // intent.putExtra("name", mEditTextSearchKeyword1.getText().toString());
+                intent.putExtra("name", mEditTextSearchKeyword1.getText().toString());
+                intent.putExtra("loginID", loginID);
+                intent.putExtra("loginSort", loginSort);
                 startActivity(intent);
             }
         });
@@ -280,12 +286,14 @@ private class GetData extends AsyncTask<String, Void, String>{
                 Intent intent =new Intent(InformationActivity.this,ReviewActivity.class);
                 intent.putExtra("name", mEditTextSearchKeyword1.getText().toString());
                 intent.putExtra("loginID", loginID);
+                intent.putExtra("loginSort", loginSort);
                 InformationActivity.this.startActivity(intent);
                 break;
             case R.id.seeReview:
                 Intent intent1=new Intent(InformationActivity.this,Review2Activity.class);
                 intent1.putExtra("name", mEditTextSearchKeyword1.getText().toString());
                 intent1.putExtra("loginID", loginID);
+                intent1.putExtra("loginSort", loginSort);
                 InformationActivity.this.startActivity(intent1);
                 break;
 
@@ -294,6 +302,4 @@ private class GetData extends AsyncTask<String, Void, String>{
     }
 
 }
-
-
 

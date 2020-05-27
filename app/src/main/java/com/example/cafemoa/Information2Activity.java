@@ -36,6 +36,7 @@ import java.util.HashMap;
 
 public class Information2Activity extends AppCompatActivity {
 
+
     private static String TAG = "phpinfo";
 
     private static final String TAG_JSON="user";
@@ -257,7 +258,6 @@ public class Information2Activity extends AppCompatActivity {
 
             case R.id.see2Review:
                 Intent intent1=new Intent(Information2Activity.this,Review3Activity.class);
-                intent1.putExtra("name", mEditTextSearchKeyword1.getText().toString());
                 Information2Activity.this.startActivity(intent1);
                 break;
 

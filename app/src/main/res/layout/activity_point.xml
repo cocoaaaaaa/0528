@@ -11,6 +11,7 @@
         android:weightSum="10"
         >
 <EditText
+    android:id="@+id/userID"
     android:layout_width="100dp"
     android:layout_height="50dp"
     android:layout_gravity="center"

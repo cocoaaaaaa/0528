@@ -217,7 +217,7 @@ public class LoginActivity extends AppCompatActivity {
                 String userPassword = item.getString(TAG_PASS);
                 String email = item.getString(TAG_EMAIL);
                 String phoneNumber = item.getString(TAG_PHONE);
-                String userSort = item.getString(TAG_SORT);
+                final String userSort = item.getString(TAG_SORT);
 
                 HashMap<String,String> hashMap = new HashMap<>();
 
@@ -237,6 +237,7 @@ public class LoginActivity extends AppCompatActivity {
                             public void onClick(DialogInterface dialog, int which) {
                                 Intent intent = new Intent(LoginActivity.this, Home2Activity.class);
                                 intent.putExtra("loginID", mEditTextID.getText().toString());
+                                intent.putExtra("loginSort", userSort);
                                 startActivity(intent);
                             }
                         })
